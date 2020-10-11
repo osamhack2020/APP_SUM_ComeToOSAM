@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "836961880885",
+    "firebase_url": "https://cometoosam.firebaseio.com",
+    "project_id": "cometoosam",
+    "storage_bucket": "cometoosam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836961880885:android:8ad392436ca1c27ac45a7c",
+        "android_client_info": {
+          "package_name": "kr.osam2020.sum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836961880885-7d9i2127i0t5imnp560lai8kc35ud61n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb88r73C5Pl1G9IlgWY3KDvkI6G1T0iuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836961880885-7d9i2127i0t5imnp560lai8kc35ud61n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
