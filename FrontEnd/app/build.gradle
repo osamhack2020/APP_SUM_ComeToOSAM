@@ -43,8 +43,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:20.2.4'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    // For OkHttp3
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     // For Firebase Function
     implementation 'com.google.firebase:firebase-functions:19.1.0'
 }
