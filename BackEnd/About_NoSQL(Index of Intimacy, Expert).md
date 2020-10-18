@@ -1,5 +1,5 @@
 This document is about **NoSQL's Keys and Values** Explanation  
-**(Index of Intimacy, Expoert)**
+**(Index of Intimacy, Expert)**
 # 1. About Intimacy Index
 1. Range of Value : 1 ~ 20 
 2. Key Item 
