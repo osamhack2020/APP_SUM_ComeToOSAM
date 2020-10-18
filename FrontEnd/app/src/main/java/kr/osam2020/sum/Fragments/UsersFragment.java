@@ -2,6 +2,7 @@ package kr.osam2020.sum.Fragments;
 
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -55,7 +58,9 @@ public class UsersFragment extends Fragment {
     private List<Users> mUsers;
     private Spinner categorySpinner;
     private RadioGroup indexGroup;
+    private RadioButton intimacyRadio, expertRadio, complexRadio;
     private ProgressBar progressBar;
+    private LinearLayout initLayout;
     private int category = 0;
     private int index = 1;
 
@@ -84,25 +89,34 @@ public class UsersFragment extends Fragment {
 
         // readUsers();
 
+        initLayout = v.findViewById(R.id.initLayout);
+        if (category == 0)
+            initLayout.setVisibility(View.VISIBLE);
+        else
+            initLayout.setVisibility(View.GONE);
         progressBar = v.findViewById(R.id.progressBarWaiting);
         progressBar.setVisibility(View.GONE);
         categorySpinner = v.findViewById(R.id.categorySpinner);
+        intimacyRadio = v.findViewById(R.id.radioButton);
+        expertRadio = v.findViewById(R.id.radioButton2);
+        complexRadio = v.findViewById(R.id.radioButton3);
         indexGroup = v.findViewById(R.id.indexRadio);
         categorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // TODO
                 if (category == position)
                     return;
-
-                progressBar.setVisibility(View.VISIBLE);
                 category = position;
 
-                if (category == 0)
+                if (category > 0) {
+                    // TODO
                     readUsers();
-                else {
-                    ReadThread readThread = new ReadThread();
-                    readThread.run();
+                    initLayout.setVisibility(View.GONE);
+                } else {
+                    mUsers.clear();
+                    userAdapter = new UserAdapter(getContext(), mUsers);
+                    recyclerView.setAdapter(userAdapter);
+                    initLayout.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -115,27 +129,31 @@ public class UsersFragment extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // TODO
                 int tempIndex = 1;
+                intimacyRadio.setTextColor(Color.parseColor("#000000"));
+                expertRadio.setTextColor(Color.parseColor("#000000"));
+                complexRadio.setTextColor(Color.parseColor("#000000"));
 
                 switch (checkedId) {
                     case R.id.radioButton:
                         tempIndex = 1;
+                        intimacyRadio.setTextColor(Color.parseColor("#045e3d"));
+                        break;
                     case R.id.radioButton2:
                         tempIndex = 2;
+                        expertRadio.setTextColor(Color.parseColor("#8f004a"));
+                        break;
                     case R.id.radioButton3:
                         tempIndex = 3;
+                        complexRadio.setTextColor(Color.parseColor("#003091"));
+                        break;
                 }
 
                 if (index == tempIndex)
                     return;
-
-                progressBar.setVisibility(View.VISIBLE);
                 index = tempIndex;
 
-                if (category == 0)
-                    readUsers();
-                else {
-                    ReadThread readThread = new ReadThread();
-                    readThread.run();
+                if (category > 0) {
+                    // TODO
                 }
             }
         });
@@ -150,6 +168,7 @@ public class UsersFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                progressBar.setVisibility(View.VISIBLE);
                 mUsers.clear();
 
                 for (DataSnapshot s : snapshot.getChildren()) {
@@ -159,41 +178,10 @@ public class UsersFragment extends Fragment {
                     if (!user.getId().equals(firebaseUser.getUid())) {
                         mUsers.add(user);
                     }
-
-                    userAdapter = new UserAdapter(getContext(), mUsers);
-                    recyclerView.setAdapter(userAdapter);
-                }
-                progressBar.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                progressBar.setVisibility(View.GONE);
-            }
-        });
-    }
-
-    private void readUsers(final ArrayList<String> uids) {
-        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("MyUsers");
-
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mUsers.clear();
-
-                for (String uid : uids) {
-                    for (DataSnapshot s : snapshot.getChildren()) {
-                        Users user = s.getValue(Users.class);
-
-                        assert user != null;
-                        if (!user.getId().equals(firebaseUser.getUid()) && user.getId().equals(uid)) {
-                            mUsers.add(user);
-                        }
-                    }
                 }
                 userAdapter = new UserAdapter(getContext(), mUsers);
                 recyclerView.setAdapter(userAdapter);
+
                 progressBar.setVisibility(View.GONE);
             }
 
@@ -204,106 +192,13 @@ public class UsersFragment extends Fragment {
         });
     }
 
-    class ReadThread extends Thread {
-        @Override
-        public void run() {
-            super.run();
+    @Override
+    public void onResume() {
+        super.onResume();
 
-            try {
-                OkHttpClient okHttpClient = new OkHttpClient();
-                Request.Builder builder = new Request.Builder();
-
-                String categoryString = new String();
-                switch (category) {
-                   case 1:
-                       categoryString = "language";
-                       break;
-                   case 2:
-                       categoryString = "combat";
-                       break;
-                   case 3:
-                       categoryString = "compute";
-                       break;
-                   case 4:
-                       categoryString = "admin";
-                       break;
-                   case 5:
-                       categoryString = "law";
-                       break;
-                    default:
-                        return;
-                }
-
-                if (index == 1)
-                    builder = builder.url("");
-                else if (index == 2)
-                    builder = builder.url("http://13.125.186.119:8080/algo/selectPro");
-                else if (index == 3)
-                    builder = builder.url("");
-                else
-                    return;
-
-                FormBody.Builder builder2 = new FormBody.Builder();
-                // builder2.add("my_uid", FirebaseAuth.getInstance().getCurrentUser().getUid());
-                builder2.add("category", categoryString);
-
-                FormBody formBody = builder2.build();
-                builder = builder.post(formBody);
-
-                Request request = builder.build();
-                okHttpClient.newCall(request).enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        ((Activity)getContext()).runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getContext(), "네트워크에 문제가 생겼습니다.", Toast.LENGTH_LONG).show();
-                                progressBar.setVisibility(View.GONE);
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onResponse(Call call, final Response response) throws IOException {
-                        if (response.code() != 200) {
-                            ((Activity)getContext()).runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast.makeText(getContext(), "네트워크에 문제가 생겼습니다.", Toast.LENGTH_LONG).show();
-                                    progressBar.setVisibility(View.GONE);
-                                }
-                            });
-                            return;
-                        }
-                        ((Activity)getContext()).runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                    JSONArray jsonArray = new JSONArray(response.body().string());
-                                    Log.d("BSJ", jsonArray.toString());
-                                    ArrayList<String> uids = new ArrayList<>();
-                                    for (int i=0; i<jsonArray.length(); i++) {
-                                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                        uids.add(jsonObject.getString("uid"));
-                                    }
-                                    readUsers(uids);
-                                } catch (Exception e) {
-                                    Toast.makeText(getContext(), "네트워크에 문제가 생겼습니다.", Toast.LENGTH_LONG).show();
-                                }
-                                progressBar.setVisibility(View.GONE);
-                            }
-                        });
-                    }
-                });
-            } catch (Exception e) {
-                ((Activity)getContext()).runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getContext(), "네트워크에 문제가 생겼습니다.", Toast.LENGTH_LONG).show();
-                        progressBar.setVisibility(View.GONE);
-                    }
-                });
-            }
+        if (userAdapter != null) {
+            userAdapter.notifyDataSetChanged();
+            recyclerView.setAdapter(userAdapter);
         }
     }
 }

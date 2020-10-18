@@ -89,8 +89,10 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                UpdateUidThread updateUidThread = new UpdateUidThread();
-                                updateUidThread.run();
+                                Intent i = new Intent(getApplication(), MainActivity.class);
+                                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(i);
+                                finish();
                             } else {
                                 Toast.makeText(LoginActivity.this, "로그인에 실패했습니다.", Toast.LENGTH_LONG).show();
                             }
@@ -99,86 +101,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    class UpdateUidThread extends Thread {
-        @Override
-        public void run() {
-            super.run();
-
-            try {
-                OkHttpClient okHttpClient = new OkHttpClient();
-                Request.Builder builder = new Request.Builder();
-                builder = builder.url("http://13.125.186.119:8080/algo/addUser");
-
-                FormBody.Builder builder2 = new FormBody.Builder();
-                Intent i = getIntent();
-                builder2.add("gunbun", gunbunEdit.getText().toString());
-                builder2.add("uid", FirebaseAuth.getInstance().getCurrentUser().getUid());
-
-                FormBody formBody = builder2.build();
-                builder = builder.post(formBody);
-
-                Request request = builder.build();
-                okHttpClient.newCall(request).enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getApplicationContext(), "네트워크에 문제가 생겼습니다.", Toast.LENGTH_LONG).show();
-                                FirebaseAuth.getInstance().signOut();
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onResponse(Call call, final Response response) throws IOException {
-                        if (response.code() != 200) {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast.makeText(getApplicationContext(), "네트워크에 문제가 생겼습니다.", Toast.LENGTH_LONG).show();
-                                    FirebaseAuth.getInstance().signOut();
-                                }
-                            });
-                            return;
-                        }
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                    String responseStr = response.body().string();
-                                    Log.d("BSJ", responseStr);
-
-                                    if (!responseStr.isEmpty()) {
-                                        Toast.makeText(getApplicationContext(),
-                                                "등록된 군번이 아닙니다.\n관리자에게 문의하십시오.", Toast.LENGTH_LONG).show();
-                                        FirebaseAuth.getInstance().signOut();
-                                    }
-                                    else {
-                                        Intent i = new Intent(getApplication(), MainActivity.class);
-                                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                        startActivity(i);
-                                        finish();
-                                    }
-                                } catch (Exception e) {
-                                    Toast.makeText(getApplicationContext(), "네트워크에 문제가 생겼습니다.", Toast.LENGTH_LONG).show();
-                                    FirebaseAuth.getInstance().signOut();
-                                }
-                            }
-                        });
-                    }
-                });
-            } catch (Exception e) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(), "네트워크에 문제가 생겼습니다.", Toast.LENGTH_LONG).show();
-                        FirebaseAuth.getInstance().signOut();
-                    }
-                });
-            }
-        }
     }
 }
