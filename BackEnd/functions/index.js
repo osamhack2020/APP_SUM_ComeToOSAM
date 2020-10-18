@@ -228,7 +228,7 @@ exports.getRelationalMatrix = functions.https.onCall((data) => {
             else 
                 serial = serial + '0';
             
-            aJson.uid = uid;
+            aJson.uid = childData.id;
             aJson.intimacy = serial;
             aJsonArray.push(aJson);
         });
