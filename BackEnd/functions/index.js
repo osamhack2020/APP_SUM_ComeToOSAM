@@ -99,7 +99,7 @@ exports.addIndexExpert = functions.https.onCall((data) => {
 exports.addIndexExpert = functions.https.onCall((data) => {
     const uid = data.uid;
 
-    return admin.database().ref('IndexIntimacy').then(snap => {
+    return admin.database().ref('IndexIntimacy/'+uid).once('value').then(snap => {
         if (!snap.exists()) {
             const a1 = getRandomInt(0, 25);
             const a2 = getRandomInt(0, 25);
@@ -151,8 +151,88 @@ exports.addIndexExpert = functions.https.onCall((data) => {
     });
 });
     
-exports.addIndexExpert = functions.https.onCall((data) => {
+exports.getRelationalMatrix = functions.https.onCall((data) => {
     const uid = data.uid;
 
+    // Get a reference to the database service
+    var database = admin.database();
+
+    return database.ref('IndexIntimacy').once('value').then(snapshot => {
+        var a1, a2, a3, a4, a5, a6, a7, a8, a9, a10;
+        snapshot.forEach(function(childSnapshot) {
+            var childKey = childSnapshot.key;
+            if (childKey === uid) {
+                var childData = childSnapshot.val();
+                a1 = childData.position1;
+                a2 = childData.position2;
+                a3 = childData.milEdu1;
+                a4 = childData.milEdu2;
+                a5 = childData.priEdu1;
+                a6 = childData.priEdu2;
+                a7 = childData.milCareer1;
+                a8 = childData.milCareer2;
+                a9 = childData.privacy1;
+                a10 = childData.privacy2;
+            }
+          
+        });
+        var aJsonArray = new Array();
+
+        snapshot.forEach(function(childSnapshot) {
+            var childKey = childSnapshot.key;
+            if (childKey === uid)
+                return; // Like Continue...
+
+            var childData = childSnapshot.val();
+            var serial = "";
+            var aJson = new Object();
+
+            if (a1 === childData.position1)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            if (a2 === childData.position2)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            if (a3 === childData.milEdu1)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            if (a4 === childData.milEdu2)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            if (a5 === childData.priEdu1)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            if (a6 === childData.priEdu2)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            if (a7 === childData.milCareer1)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            if (a8 === childData.milCareer2)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            if (a9 === childData.privacy1)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            if (a10 === childData.privacy2)
+                serial = serial + '1';
+            else 
+                serial = serial + '0';
+            
+            aJson.uid = uid;
+            aJson.intimacy = serial;
+            aJsonArray.push(aJson);
+        });
+        return JSON.stringify(aJsonArray);
+    });
 });
     
