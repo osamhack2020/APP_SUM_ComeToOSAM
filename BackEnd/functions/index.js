@@ -40,116 +40,6 @@ exports.addIndexIntimacy = functions.https.onCall((data) => {
         }
     });
 });
-
-exports.addIndexExpert = functions.https.onCall((data) => {
-    const uid = data.uid;
-
-    return admin.database().ref('IndexExpert/'+uid).once('value').then(snap => {
-        if (!snap.exists()) {
-            const a1 = getRandomInt(0, 25);
-            const a2 = getRandomInt(0, 25);
-            const a3 = getRandomInt(0, 25);
-            const a4 = getRandomInt(0, 25);
-            const a5 = getRandomInt(0, 25);
-            const a6 = getRandomInt(0, 25);
-            const a7 = getRandomInt(0, 25);
-            const a8 = getRandomInt(0, 25);
-            const a9 = getRandomInt(0, 25);
-            const a10 = getRandomInt(0, 25);
-            const a11 = getRandomInt(0, 25);
-            const a12 = getRandomInt(0, 25);
-            const a13 = getRandomInt(0, 25);
-            const a14 = getRandomInt(0, 25);
-            const a15 = getRandomInt(0, 25);
-            const a16 = getRandomInt(0, 25);
-            const a17 = getRandomInt(0, 25);
-            const a18 = getRandomInt(0, 25);
-            const a19 = getRandomInt(0, 25);
-            const a20 = getRandomInt(0, 25);
-
-            return admin.database().ref('IndexExpert/'+uid).set({
-                "id" : uid,
-                "language_position" : String(a1),
-                "language_edu" : String(a2),
-                "language_career" : String(a3),
-                "language_performance" : String(a4), 
-                "combat_position" : String(a5),
-                "combat_edu" : String(a6),
-                "combat_career" : String(a7),
-                "combat_performance" : String(a8), 
-                "computer_position" : String(a9),
-                "computer_edu" : String(a10),
-                "computer_career" : String(a11),
-                "computer_performance" : String(a12), 
-                "admin_position" : String(a13),
-                "admin_edu" : String(a14),
-                "admin_career" : String(a15),
-                "admin_performance" : String(a16), 
-                "law_position" : String(a17),
-                "law_edu" : String(a18),
-                "law_career" : String(a19),
-                "law_performance" : String(a20)
-            });
-        } else {
-            return null;
-        }
-    });
-});
-
-exports.addIndexExpert = functions.https.onCall((data) => {
-    const uid = data.uid;
-
-    return admin.database().ref('IndexIntimacy/'+uid).once('value').then(snap => {
-        if (!snap.exists()) {
-            const a1 = getRandomInt(0, 25);
-            const a2 = getRandomInt(0, 25);
-            const a3 = getRandomInt(0, 25);
-            const a4 = getRandomInt(0, 25);
-            const a5 = getRandomInt(0, 25);
-            const a6 = getRandomInt(0, 25);
-            const a7 = getRandomInt(0, 25);
-            const a8 = getRandomInt(0, 25);
-            const a9 = getRandomInt(0, 25);
-            const a10 = getRandomInt(0, 25);
-            const a11 = getRandomInt(0, 25);
-            const a12 = getRandomInt(0, 25);
-            const a13 = getRandomInt(0, 25);
-            const a14 = getRandomInt(0, 25);
-            const a15 = getRandomInt(0, 25);
-            const a16 = getRandomInt(0, 25);
-            const a17 = getRandomInt(0, 25);
-            const a18 = getRandomInt(0, 25);
-            const a19 = getRandomInt(0, 25);
-            const a20 = getRandomInt(0, 25);
-
-            return admin.database().ref('IndexExpert/'+uid).set({
-                "id" : uid,
-                "language_position" : String(a1),
-                "language_edu" : String(a2),
-                "language_career" : String(a3),
-                "language_performance" : String(a4), 
-                "combat_position" : String(a5),
-                "combat_edu" : String(a6),
-                "combat_career" : String(a7),
-                "combat_performance" : String(a8), 
-                "computer_position" : String(a9),
-                "computer_edu" : String(a10),
-                "computer_career" : String(a11),
-                "computer_performance" : String(a12), 
-                "admin_position" : String(a13),
-                "admin_edu" : String(a14),
-                "admin_career" : String(a15),
-                "admin_performance" : String(a16), 
-                "law_position" : String(a17),
-                "law_edu" : String(a18),
-                "law_career" : String(a19),
-                "law_performance" : String(a20)
-            });
-        } else {
-            return null;
-        }
-    });
-});
     
 exports.getRelationalMatrix = functions.https.onCall((data) => {
     const uid = data.uid;
@@ -236,3 +126,58 @@ exports.getRelationalMatrix = functions.https.onCall((data) => {
     });
 });
     
+
+exports.addIndexExpert = functions.https.onCall((data) => {
+    const uid = data.uid;
+
+    return admin.database().ref('IndexExpert/'+uid).once('value').then(snap => {
+        if (!snap.exists()) {
+            const a1 = getRandomInt(0, 25);
+            const a2 = getRandomInt(0, 25);
+            const a3 = getRandomInt(0, 25);
+            const a4 = getRandomInt(0, 25);
+            const a5 = getRandomInt(0, 25);
+            const a6 = getRandomInt(0, 25);
+            const a7 = getRandomInt(0, 25);
+            const a8 = getRandomInt(0, 25);
+            const a9 = getRandomInt(0, 25);
+            const a10 = getRandomInt(0, 25);
+            const a11 = getRandomInt(0, 25);
+            const a12 = getRandomInt(0, 25);
+            const a13 = getRandomInt(0, 25);
+            const a14 = getRandomInt(0, 25);
+            const a15 = getRandomInt(0, 25);
+            const a16 = getRandomInt(0, 25);
+            const a17 = getRandomInt(0, 25);
+            const a18 = getRandomInt(0, 25);
+            const a19 = getRandomInt(0, 25);
+            const a20 = getRandomInt(0, 25);
+
+            return admin.database().ref('IndexExpert/'+uid).set({
+                "id" : uid,
+                "language_position" : String(a1),
+                "language_edu" : String(a2),
+                "language_career" : String(a3),
+                "language_performance" : String(a4), 
+                "combat_position" : String(a5),
+                "combat_edu" : String(a6),
+                "combat_career" : String(a7),
+                "combat_performance" : String(a8), 
+                "computer_position" : String(a9),
+                "computer_edu" : String(a10),
+                "computer_career" : String(a11),
+                "computer_performance" : String(a12), 
+                "admin_position" : String(a13),
+                "admin_edu" : String(a14),
+                "admin_career" : String(a15),
+                "admin_performance" : String(a16), 
+                "law_position" : String(a17),
+                "law_edu" : String(a18),
+                "law_career" : String(a19),
+                "law_performance" : String(a20)
+            });
+        } else {
+            return null;
+        }
+    });
+});
