@@ -27,7 +27,7 @@
 
 ## 어플리케이션 구동 환경
 * 최소 사양 : Android 4.1 (Jelly Bean)
-* APK 설치파일  : <a href="/Installation_SUM.apk">SUM 설치파일</a>
+* APK 설치파일  : <a href="/Installation_SUM.apk" download>SUM 설치파일</a>
 
 ## 기술 스택
 ### Server(back-end)
