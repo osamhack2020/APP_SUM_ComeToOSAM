@@ -43,3 +43,4 @@
 - 박정선 (팀원) sunimooni
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
+* 라이센스 : <a href="/LICENSE">MIT</a>
