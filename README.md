@@ -8,20 +8,33 @@
 <table>
   <tbody>
     <tr>
-        
+      <td><img src="/image/1.jpg"></td>
+      <td><img src="/image/2.jpg"></td>
+      <td><img src="/image/3.jpg"></td>
+      <td><img src="/image/4.jpg"></td>
+      <td><img src="/image/5.jpg"></td>
     </tr>
     <tr>
+      <td><p align="center">도움이 필요한 <br> 분야 선택</p></td>
+      <td><p align="center">분야별 전문가 <br> Reranking</p></td>
+      <td><p align="center">개인관계지수를 <br> 고려한 추천</p></td>
+      <td><p align="center">전문분야, 개인관계 <br> 맞춤 분석 추천</p></td>
+      <td><p align="center">비대면 소통으로 <br> 신속한 도움</p></td>
     </tr>
   </tbody>
 </table>
 
 
-## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
+## 어플리케이션 구동 환경
+* 최소 사양 : Android 4.1 (Jelly Bean)
+* APK 설치파일  : <a href="/Installation_SUM.apk">SUM 설치파일</a>
 
-## 기술 스택 (Technique Used) (예시)
+## 기술 스택
 ### Server(back-end)
+ - Firebase
  
 ### front-end
+  - Android Studio
 
 ## 팀 정보 (Team Information)
 - 김영인 (팀장) duddls4471
