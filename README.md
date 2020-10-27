@@ -1,5 +1,5 @@
 ## 프로젝트 소개
-<p align="center"><img src="/mainLogo.png"></p>
+<p align="center"><img src="/image/mainLogo2.png"></p>
 
 - SUM(Smart+Untact+Meeting)은 군 생활을 하는 장병 및 군무원들을 대상으로 각 분야의 인재(전문가)와 비대면 소통할 수 있는 커뮤니티 앱 플랫폼입니다. 사용자가 선택한 분야와 개인관계지수를 고려하여, 개인에게 필요한 맞춤 전문가를 찾아주어 업무를 수행함에 있어 적시에 실질적인 도움을 받을 수 있는 커뮤니티 플랫폼을 목표로 하고있습니다. 
 
@@ -27,7 +27,9 @@
 ## 추천 알고리즘
  - Topic Sensitive_Social Relation Rank Algorithm
    <br>사용자들이 갖는 내재적 속성과 토픽 간에 상호 연관성을 고려하여 소셜관계 지수 계산 및 전문가 추천
-   
+   <p align="center"><img src="/image/mat.PNG"></p>
+   <p align="center"><img src="/image/sick.PNG"></p>
+
 ## 기대 효과
  - AI기반 원천기술 확보
    <br>국방인사정보체계(국방부), 인터넷 공개자료(SNS, 블로그 등) 수집 및 연동하여 빅데이터 분석가능
@@ -43,11 +45,7 @@
 * APK 설치파일  : <a href="/Installation_SUM.apk" download>SUM 설치파일</a>
 
 ## 기술 스택
-### Server(back-end)
- - Firebase
- 
-### front-end
-  - Android Studio
+<p align="center"><img src="/image/STACK.PNG"></p>
 
 ## 팀 정보 (Team Information)
 - 팀장 김영인 duddls4471@naver.com
