@@ -24,6 +24,19 @@
   </tbody>
 </table>
 
+## 추천 알고리즘
+ - Topic Sensitive_Social Relation Rank Algorithm
+   <br>사용자들이 갖는 내재적 속성과 토픽 간에 상호 연관성을 고려하여 소셜관계 지수 계산 및 전문가 추천
+   
+## 기대 효과
+ - AI기반 원천기술 확보
+   <br>국방인사정보체계(국방부), 인터넷 공개자료(SNS, 블로그 등) 수집 및 연동하여 빅데이터 분석가능
+ - 인재획득
+   <br>추후 확보된 원천 기술을 통해서 적격자 추천 및 선발 결과를 자동 분석가능
+ - 전역지원
+   <br>취업역량 강화, 전역장병 만족도 제고
+ - 인재 양성/운영
+   <br>맞춤식 자기개발 추천 및 인사관리를 통해 필요한 인재육성 및 적재적소 운영가능
 
 ## 어플리케이션 구동 환경
 * 최소 사양 : Android 4.1 (Jelly Bean)
@@ -37,10 +50,10 @@
   - Android Studio
 
 ## 팀 정보 (Team Information)
-- 김영인 (팀장) duddls4471
-- 배성진 (팀원) SharkBSJ
-- 구예빈 (팀원) beenduri
-- 박정선 (팀원) sunimooni
+- 팀장 김영인 duddls4471@naver.com
+- 팀원 배성진 sjbea1996@naver.com
+- 팀원 구예빈 gyb0534@naver.com
+- 팀원 박정선 jspark7373@naver.com
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 * 라이센스 : <a href="/LICENSE">MIT</a>
