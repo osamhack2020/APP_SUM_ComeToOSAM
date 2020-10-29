@@ -31,14 +31,18 @@
    <p align="center"><img src="/image/sick.PNG"></p>
 
 ## 기대 효과
- - AI기반 원천기술 확보
-   <br>국방인사정보체계(국방부), 인터넷 공개자료(SNS, 블로그 등) 수집 및 연동하여 빅데이터 분석가능
- - 인재획득
-   <br>추후 확보된 원천 기술을 통해서 적격자 추천 및 선발 결과를 자동 분석가능
- - 전역지원
-   <br>취업역량 강화, 전역장병 만족도 제고
- - 인재 양성/운영
-   <br>맞춤식 자기개발 추천 및 인사관리를 통해 필요한 인재육성 및 적재적소 운영가능
+
+### AI기반 원천기술 확보
+  * 국방인사정보체계(국방부), 인터넷 공개자료(SNS, 블로그 등) 수집 및 연동하여 빅데이터 분석가능
+
+### 인재획득
+  * 추후 확보된 원천 기술을 통해서 적격자 추천 및 선발 결과를 자동 분석가능
+
+### 전역지원
+  * 취업역량 강화, 전역장병 만족도 제고
+
+### 인재 양성/운영
+  * 맞춤식 자기개발 추천 및 인사관리를 통해 필요한 인재육성 및 적재적소 운영가능
 
 ## 어플리케이션 구동 환경
 * 최소 사양 : Android 4.1 (Jelly Bean)
@@ -46,6 +50,23 @@
 
 ## 기술 스택
 <p align="center"><img src="/image/STACK.PNG"></p>
+
+### Back-End
+* Firebase Authentication
+* Cloud Function for Firebase
+* Firebase Realtime Database
+* Firebase Cloud Messaging
+* nodeJs
+* Express
+
+### Front-End
+* Android
+* glide
+* Retrofit
+* PhotoView
+
+### MNG
+* GitHub
 
 ## 팀 정보 (Team Information)
 - 팀장 김영인 duddls4471@naver.com
