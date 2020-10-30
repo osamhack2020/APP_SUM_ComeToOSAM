@@ -28,6 +28,9 @@
 </table>
 
 ### 다양한 추천 방식 및 카테고리 적용
+
+<p align="center"><img width="200" src="/CPA1.jpg"></p>
+
 * 다양한 추천 방식
   * 개인관계지수(사용자간의 관계만을 고려)
   * 전문가지수(해당분야의 전문성만 고려)
@@ -35,7 +38,9 @@
 * 카테고리별 최적의 전문가 검색 및 재정렬(Re Ranking!!)
   * 초기버전 적용분야 : 어학, 전투능력, 전산, 행정, 법
   * 추후 다양한 분야 추가 예정
+  
 ### 추천받은 전문가의 프로필을 통한 관계도, 전문성을 고려한 실시간 소통
+<p align="center"><img width="200" src="/CPA2.png"></p>
 
 ## 추천 알고리즘
  - Topic Sensitive_Social Relation Rank Algorithm
