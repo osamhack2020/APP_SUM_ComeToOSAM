@@ -29,6 +29,9 @@
 ## 추천 알고리즘
  - Topic Sensitive_Social Relation Rank Algorithm
    <br>사용자들이 갖는 내재적 속성과 토픽 간에 상호 연관성을 고려하여 소셜관계 지수 계산 및 전문가 추천
+   <br>내재적 속성이 영향을 받으면 '1', 영향을 받지 않으면 '0' 부여
+   <br>토픽에 영향을 받을 때 사용자 간의 소셜관계 랭크 및 전문가 추천 식 적용
+
    <p align="center"><img src="/image/mat.PNG"></p>
    <p align="center"><img src="/image/sick.PNG"></p>
 
@@ -46,7 +49,8 @@
 ### 인재 양성/운영
   * 맞춤식 자기개발 추천 및 인사관리를 통해 필요한 인재육성 및 적재적소 운영가능
   
-### 스마트 인재 추천 시스템과의 연동성  
+### <AI기반 스마트 인재관리시스템 발판 마련>
+
 
 ## 어플리케이션 구동 환경
 * 최소 사양 : Android 4.1 (Jelly Bean)
@@ -60,12 +64,11 @@
 * Cloud Function for Firebase
 * Firebase Realtime Database
 * Firebase Cloud Messaging
-* nodeJs
-* Express
+* NodeJs
 
 ### Front-End
-* Android
-* glide
+* Android(JAVA)
+* Glide
 * Retrofit
 * PhotoView
 
@@ -73,10 +76,10 @@
 * GitHub
 
 ## 팀 정보 (Team Information)
-- 팀장 김영인 duddls4471@naver.com
-- 팀원 배성진 sjbea1996@naver.com
-- 팀원 구예빈 gyb0534@naver.com
-- 팀원 박정선 jspark7373@naver.com
+- 팀장 김영인 duddls4471 duddls4471@naver.com
+- 팀원 배성진 SharkBSJ sjbea1996@naver.com
+- 팀원 박정선 sunimooni jspark7373@naver.com
+- 팀원 구예빈 beenduri gyb0534@naver.com
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 * 라이센스 : <a href="/LICENSE">MIT</a>
