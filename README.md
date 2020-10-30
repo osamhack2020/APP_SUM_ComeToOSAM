@@ -44,10 +44,10 @@
 
 ## 추천 알고리즘
 * Topic Sensitive_Social Relation Rank Algorithm
-  * 사용자들이 갖는 내재적 속성과 토픽 간에 상호 연관성을 고려하여 소셜관계 지수 계산 및 전문가 추천
-  * Association Matrix : 내재적 속성이 영향을 받으면 '1', 영향을 받지 않으면 '0' 부여
-  <p align="center"><img src="/DocsImages/mat.PNG"></p>
-  * 토픽에 영향을 받을 때 사용자 간의 소셜관계 랭크 및 전문가 추천 식 적용
+  * 사용자들이 갖는 내재적 속성과 토픽 간에 상호 연관성을 고려하여 소셜관계 지수 계산 및 전문가 추천   
+  * Association Matrix : 내재적 속성이 영향을 받으면 '1', 영향을 받지 않으면 '0' 부여   
+<p align="center"><img src="/DocsImages/mat.PNG"></p>
+  * 토픽에 영향을 받을 때 사용자 간의 소셜관계 랭크 및 전문가 추천 식 적용   
   <p align="center"><img src="/DocsImages/sick.PNG"></p>
   <p align="center"><img src="/DocsImages/algor.png"></p>
 
@@ -72,7 +72,36 @@
 
 ## 어플리케이션 구동 환경
 * 최소 사양 : Android 4.1 (Jelly Bean)
+
+## 설치 안내 (Installation Process)
 * APK 설치파일  : <a href="/Installation_SUM.apk" download>SUM 설치파일</a>
+
+## 프로젝트 사용법 (Getting Started)
+* 저장소 클론
+```
+git clone https://github.com/osamhack2020/APP_SUM_ComeToOSAM.git
+```
+* FrontEnd (Android)
+```
+// APP 프로젝트 Import
+Android Studio > File > Open > ../APP_SUM_ComeToOSAM/FrontEnd 클릭 > OK
+```
+* BackEnd (Node Js)
+```
+// 경로 이동
+$ cd APP_SUM_ComeToOSAM
+$ cd BackEnd
+// Node.js 및 npm이 설치되었으면 원하는 방법으로 Firebase CLI를 설치
+$ npm install -g firebase-tools
+// Firebase 도구 인증
+$ firebase login
+// Firebase 함수 수정 후 배포
+$ firebase deploy
+
+```
+_서버(BackEnd)는 Firebase Project에 Users로 추가되어 권한이 있어야합니다. 현재 프로젝트에 참가하시면 baesungjin1996@gmail.com으로 메일을 주거나 아래 가이드를 참고하여 새로운 프로젝트를 생성하여 진행하십시오._
+[Firebase 가이드](https://firebase.google.com/docs/guides)
+
 
 ## 기술 스택
 <p align="center"><img src="/DocsImages/STACK.PNG"></p>
@@ -82,7 +111,7 @@
 * Cloud Function for Firebase
 * Firebase Realtime Database
 * Firebase Cloud Messaging
-* NodeJs
+* Node Js
 
 ### Front-End
 * Android(JAVA)
