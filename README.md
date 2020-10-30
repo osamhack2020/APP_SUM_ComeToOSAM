@@ -35,7 +35,7 @@
   * 개인관계지수(사용자간의 관계만을 고려)
   * 전문가지수(해당분야의 전문성만 고려)
   * 복합지수(개인관계지수와 전문가 지수를 모두고려)
-* 카테고리별 최적의 전문가 검색 및 재정렬(Re Ranking!!)
+* 카테고리별 최적의 전문가 검색 및 재정렬(Reranking)
   * 초기버전 적용분야 : 어학, 전투능력, 전산, 행정, 법
   * 추후 다양한 분야 추가 예정
   
@@ -44,7 +44,7 @@
 
 ## 추천 알고리즘
  - Topic Sensitive_Social Relation Rank Algorithm
- 
+> 논문 : Kim, Young-an, and Gun-woo Park. "Topic sensitive_social relation rank algorithm for efficient social search." The Journal of Korean Institute of Communications and Information Sciences 38.5 (2013): 385-393.
    * 사용자들이 갖는 내재적 속성과 토픽 간에 상호 연관성을 고려하여 소셜관계 지수 계산 및 전문가 추천 
    * Association Matrix : 내재적 속성이 영향을 받으면 '1', 영향을 받지 않으면 '0' 부여
    <p align="center"><img src="/DocsImages/mat.PNG"></p>
@@ -66,7 +66,7 @@
 ### 인재 양성/운영
   * 맞춤식 자기개발 추천 및 인사관리를 통해 필요한 인재육성 및 적재적소 운영가능
   
-> AI기반 스마트 인재관리시스템 발판 마련
+    AI기반 스마트 인재관리시스템 발판 마련
 
 
 ## 어플리케이션 구동 환경
@@ -93,10 +93,10 @@
 * GitHub
 
 ## 팀 정보 (Team Information)
-- 팀장 김영인 duddls4471  duddls4471@naver.com
-- 팀원 배성진 SharkBSJ  sjbea1996@naver.com
-- 팀원 박정선 sunimooni  jspark7373@naver.com
-- 팀원 구예빈 beenduri  gyb0534@naver.com
+- 팀장 김영인 duddls4471 duddls4471@naver.com
+- 팀원 배성진 SharkBSJ sjbea1996@naver.com
+- 팀원 박정선 sunimooni jspark7373@naver.com
+- 팀원 구예빈 beenduri gyb0534@naver.com
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 * 라이센스 : <a href="/LICENSE.md">MIT</a>
