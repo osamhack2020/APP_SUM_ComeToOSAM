@@ -46,10 +46,10 @@
 * Topic Sensitive_Social Relation Rank Algorithm
   * 사용자들이 갖는 내재적 속성과 토픽 간에 상호 연관성을 고려하여 소셜관계 지수 계산 및 전문가 추천
   * Association Matrix : 내재적 속성이 영향을 받으면 '1', 영향을 받지 않으면 '0' 부여
-![Associaion Matrix](./DocsImages/mat.PNG)
+<p align="center"><img src="/DocsImages/mat.PNG"></p>
   * 토픽에 영향을 받을 때 사용자 간의 소셜관계 랭크 및 전문가 추천 식 적용
-![Equation](./DocsImages/sick.PNG)
-![Example](./DocsImages/algor.png)
+<p align="center"><img src="/DocsImages/sick.PNG"></p>
+<p align="center"><img src="/DocsImages/algor.png"></p>
 > Kim, Young-an, and Gun-woo Park. "Topic sensitive_social relation rank algorithm for efficient social search." The Journal of Korean Institute of Communications and Information Sciences 38.5 (2013): 385-393.
 
 ## 기대 효과
