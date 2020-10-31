@@ -119,7 +119,7 @@ $ cd BackEnd
 $ npm install -g firebase-tools
 // Firebase 도구 인증
 $ firebase login
-// Firebase 함수 수정(./functions/index.js) 후 배포
+// Firebase 함수(./functions/index.js) 수정 후 배포
 $ firebase deploy
 // 자세한 사항은 아래 'Firebase 가이드' 참조
 ```
