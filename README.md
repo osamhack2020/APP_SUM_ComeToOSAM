@@ -5,6 +5,13 @@
 
 <a href="https://youtu.be/_ZvgSkNEopI"><p align="center"><img src="/DocsImages/video.PNG"></p></a>
 
+## 필요성
+* 현 실태(문제점)
+  * 軍에는 다양한 분야의 전문가들이 있지만 그들의 역량 및 노하우를 손쉽게 공유하거나 획득하는 것이 어려움
+* 해결방안
+  * 분야별 __최적의 전문가를 추천해주고 상호 소통__이 가능한 시스템을 __접근성이 높은 'APP'__으로 구현
+
+
 ## 기능 설계
 
 ### 어플리케이션 화면
@@ -70,6 +77,7 @@
 
 ## 설치 안내 (Installation Process)
 * APK 설치파일  : <a href="/Installation_SUM.apk" download>SUM 설치파일</a>
+  * 원활한 설치를 위해 출처를 알 수 없는 앱 설치를 허용해 주십시오.
 
 ## 프로젝트 사용법 (Getting Started)
 * 저장소 클론
