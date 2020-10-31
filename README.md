@@ -86,7 +86,7 @@ git clone https://github.com/osamhack2020/APP_SUM_ComeToOSAM.git
 ```
 * FrontEnd (Android)
 ```
-// APP 프로젝트 Import
+// APP 프로젝트 열기
 Android Studio > File > Open > ../APP_SUM_ComeToOSAM/FrontEnd 클릭 > OK
 ```
 * BackEnd (Node Js)
