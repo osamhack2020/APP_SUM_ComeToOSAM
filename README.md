@@ -77,7 +77,7 @@
 
 ## 설치 안내 (Installation Process)
 * APK 설치파일  : <a href="/Installation_SUM.apk" download>SUM 설치파일</a>
-  * APK 파일 실행을 위해 출처를 알 수 없는 앱 설치를 허용해 해주십시오.
+  * APK 파일 실행을 위해 출처를 알 수 없는 앱 설치를 허용해주십시오.
 
 ## 프로젝트 사용법 (Getting Started)
 * 저장소 클론
