@@ -69,9 +69,9 @@
   * 개인관계 지수 계산을 위한 데이터 전처리
   * Parameter : uid (현재 계정 ID)
 * getRelationalMatrix
-  * 전문가 추천 계산 및 결과 반환
+  * 전문가 추천도 계산 및 결과 반환
   * Parameter : uid (현재 계정 ID)
-  * Return : 개인관계 지수, 전문가 지수 결과 (Matrix 형태)
+  * Return : 전문가 정보, 개인관계 지수, 전문가 지수 결과 (Matrix 형태)
 
 ### DB 설계 (Firebase Realtime Database, NoSQL)
 * 주요 Key
