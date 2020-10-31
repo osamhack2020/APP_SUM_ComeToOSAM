@@ -61,6 +61,27 @@
 
 > Kim, Young-an, and Gun-woo Park. "Topic sensitive_social relation rank algorithm for efficient social search." The Journal of Korean Institute of Communications and Information Sciences 38.5 (2013): 385-393.
 
+### API 설계 (Firebase Cloud Functions)
+* addIndexExpert
+  * 전문가 지수 계산을 위한 데이터 전처리
+  * Parameter : uid (현재 계정 ID)
+* addIndexIntimacy
+  * 개인관계 지수 계산을 위한 데이터 전처리
+  * Parameter : uid (현재 계정 ID)
+* getRelationalMatrix
+  * 전문가 추천 계산 및 결과 반환
+  * Parameter : uid (현재 계정 ID)
+  * Return : 개인관계 지수, 전문가 지수 결과 (Matrix 형태)
+
+### DB 설계 (Firebase Realtime Database, NoSQL)
+* 주요 Key
+  * Chatlist : 대화방 정보
+  * Chats : 실시간 대화 정보
+  * IndexExpert : 전문가 지수 계산에 사용
+  * IndexIntimacy : 개인관계 지수 계산에 사용
+  * MyUsers : User 정보
+  * Tokens : 기기 정보 (Firebase Cloud Messaging, Notification에 사용)
+
 ## 기대 효과
 ### AI기반 스마트 인재관리시스템 발판 마련
 * AI기반 원천기술 확보
@@ -100,29 +121,10 @@ $ npm install -g firebase-tools
 $ firebase login
 // Firebase 함수 수정(./functions/index.js) 후 배포
 $ firebase deploy
-// 자세한 사항은 아래 가이드 'Firebase 가이드' 참조
+// 자세한 사항은 아래 'Firebase 가이드' 참조
 ```
 _서버(BackEnd) 수정 후 배포를 위해 Firebase Project의 User로 추가되어 권한이 있어야합니다. 현재 프로젝트에 권한을 획득하시려면 baesungjin1996@gmail.com으로 메일을 주거나, 아래 가이드를 참고하여 새로운 프로젝트를 생성하여 진행하십시오._
 * [Firebase 가이드](https://firebase.google.com/docs/guides)
-
-## API info
-* 친밀도지수 계산
-  * URL : /IndexIntimacy
-  * Method : GET
-  * Parameter : uid
-
-* 전문가지수 계산
-  * URL : /IndexExpert
-  * Method : GET
-  * Parameter : uid
-
-## DB info
-- Chatlist
-- Chats
-- IndexExpert
-- IndexIntimacy
-- MyUsers
-- Tokens
 
 ## 기술 스택
 <p align="center"><img src="/DocsImages/STACK.PNG"></p>
