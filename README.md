@@ -116,7 +116,7 @@ _서버(BackEnd) 수정 후 배포를 위해 Firebase Project의 User로 추가�
 * Node Js
 
 ### Front-End
-* Android(JAVA)
+* Android (JAVA)
 * Glide
 * Retrofit
 * PhotoView
