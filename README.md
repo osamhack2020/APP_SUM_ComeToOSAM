@@ -104,6 +104,24 @@ $ firebase deploy
 _서버(BackEnd) 수정 후 배포를 위해 Firebase Project의 User로 추가되어 권한이 있어야합니다. 현재 프로젝트에 권한을 획득하시려면 baesungjin1996@gmail.com으로 메일을 주거나, 아래 가이드를 참고하여 새로운 프로젝트를 생성하여 진행하십시오._
 * [Firebase 가이드](https://firebase.google.com/docs/guides)
 
+## DB info
+- Chatlist
+- Chats
+- IndexExpert
+- IndexIntimacy
+- MyUsers
+- Tokens
+
+## API info
+* 친밀도지수 계산
+  * URL : /IndexIntimacy
+  * Method : GET
+  * Parameter : uid
+
+* 전문가지수 계산
+  * URL : /IndexExpert
+  * Method : GET
+  * Parameter : uid
 
 ## 기술 스택
 <p align="center"><img src="/DocsImages/STACK.PNG"></p>
