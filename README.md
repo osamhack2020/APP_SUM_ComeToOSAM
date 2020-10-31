@@ -98,8 +98,9 @@ $ cd BackEnd
 $ npm install -g firebase-tools
 // Firebase 도구 인증
 $ firebase login
-// Firebase 함수 수정 후 배포
+// Firebase 함수 수정(./functions/index.js) 후 배포
 $ firebase deploy
+// 자세한 사항은 아래 가이드 'Firebase 가이드' 참조
 ```
 _서버(BackEnd) 수정 후 배포를 위해 Firebase Project의 User로 추가되어 권한이 있어야합니다. 현재 프로젝트에 권한을 획득하시려면 baesungjin1996@gmail.com으로 메일을 주거나, 아래 가이드를 참고하여 새로운 프로젝트를 생성하여 진행하십시오._
 * [Firebase 가이드](https://firebase.google.com/docs/guides)
